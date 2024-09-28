@@ -1,0 +1,101 @@
+<div class="card">
+<div class="dad">
+    <div class="container-fluid">
+        <div class="row">
+            <img class="logo" src="..\\src\assets\logoOficina.png" alt="">
+                <div class="col ">Recuperadora de Cabines - Restaurante - Customizaçoes
+                    <p> Recuperaçao de Plasticos - Pinturas - Polimnetos</p>
+                    <p> <h4 style="text-align:CENTER ;">FABINHO <p> 99144-2974</p></h4>
+                    <p> Rod. Celso Garcia Cid, 3348</p>
+                    <p> Jd.Novo Bandeirantes - Cambé</p>
+                </div>
+          <div class="col orc" ><h1> Nº ORÇAMENTO : {{numeroOrcamento}}</h1></div>
+      </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="p-grid p-fluid grid">
+        <div class="col-6">
+            <p>Cliente:</p><p><input type="text" placeholder="EX usuario da silva" ngModel name="nome" [(ngModel)]="cliente.nome" [formControl]="nome" class="p-inputtext-lg" pInputText></p>
+        </div>
+        <div class="col-6">
+            <p>Email:</p><p><input type="email" placeholder="EX meuMail@gmail.com" ngModel name="email"  [(ngModel)]="cliente.email" [formControl]="email" class="p-inputtext-lg" pInputText></p>
+        </div>
+    </div>
+  </div>
+    <div class="p-grid p-fluid grid">
+      <div class="col">
+          <p>Endereço:</p>
+            <input type="text" placeholder="EX Rua jardim jorge velho jardim ..." ngModel name="endereco"  [(ngModel)]="cliente.endereco" [formControl]="endereco" class="p-inputtext-lg" pInputText>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="p-grid p-fluid grid">
+          <div class="col-6">
+            <p>Veiculo:</p>
+            <input type="text" placeholder="EX fusca" ngModel name="veiculo" [(ngModel)]="cliente.veiculo" [formControl]="veiculo" class="p-inputtext-lg" pInputText>
+          </div>
+          <div class="col-6">
+            <p>Placa:</p>
+            <input type="text" placeholder="EX AEO-1903" ngModel name="placa" [(ngModel)]="cliente.placa" [formControl]="placa" class="p-inputtext-lg" pInputText>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+          <div class="p-grid p-fluid grid">
+            <div class="col-6">
+              <p>Cidade:</p>
+              <input type="text" placeholder="EX Cambé" ngModel name="cidade" [(ngModel)]="cliente.cidade" [formControl]="cidade" class="p-inputtext-lg" pInputText>
+            </div>
+            <div class="col-6">
+              <p>Estado:</p>
+              <input type="text" placeholder="EX PR" ngModel name="estado" [(ngModel)]="cliente.estado" [formControl]="estado"  class="p-inputtext-lg" pInputText>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-grid p-fluid grid">
+        <div class="col-6">
+             <p>Fone:</p>
+             <input type="tel" placeholder="EX +554300000000" mask="+000000000000" ngModel name="telefone" [(ngModel)]="cliente.telefone" [formControl]="telefone" class="p-inputtext-lg" pInputText>
+        </div>
+
+        <div class="col-6">
+              <p>Celular:</p>
+              <input type="tel" placeholder="Ex +5543000000000" mask="+0000000000000" ngModel name="celular" [(ngModel)]="cliente.celular" [formControl]="celular" class="p-inputtext-lg" pInputText>
+            </div>
+        </div>
+
+  </div>
+  <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin" id="materiais">
+    <h2 class="w3-center">Materiais Cliente</h2>
+    <!--GERA OS MATERIAIS DE CLIENTE-->
+    <div class="container" id="materialContainer"></div>
+    <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" id="btnAdicionarMaterial" (click)="adicionarMateriais()">Adicionar Materiais</button>
+  </div>
+
+  <h2 class="w3-center w3-text-blue">Materiais Cadastrados</h2>
+  <p-pickList [source]="materiaisParaEscolha" [target]="materiaisSelecionados" sourceHeader="Available" targetHeader="Selected" [dragdrop]="true"
+  [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" filterBy="codProduto"
+  sourceFilterPlaceholder="Filtrar pelo codigo do produto" targetFilterPlaceholder="Filtrar pelo codigo do produto">
+    <ng-template let-product pTemplate="item">
+        <div class="product-item">
+            <div class="product-list-detail">
+                <h5 class="mb-2">{{product.codProduto}}</h5>
+                <i class="pi pi-tag product-category-icon"></i>
+                <span class="product-category">{{product.descriminizacao}}</span>
+            </div>
+            <div class="product-list-action">
+                <h6 class="mb-2">${{product.precoUnidade | number: '1.2-2'}}</h6>
+            </div>
+        </div>
+    </ng-template>
+</p-pickList>
+<p-toast></p-toast>
+<button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" [disabled]="!validaCliente()" id="btnAdicionarMaterial" (click)="validarDadosDoHTMLParaEnviarDados()">Enviar Email de orçamento</button>
+</div>

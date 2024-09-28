@@ -1,0 +1,42 @@
+<div class="container mat-elevation-z8">
+  <h1 class="full-width">Atualizando chamado</h1>
+  <img  class="full-width" src="../../../../assets/img/helpDesk.svg">
+  <form class="form">
+      <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Titulo</mat-label>
+          <input [(ngModel)]="chamado.title" [disabled]="true" name="title" matInput placeholder="{{chamado.title}}">
+      </mat-form-field>
+      <div class="status-prioridade">
+          <mat-form-field appearance="outline">
+              <mat-label>STATUS ({{retornaStatus(chamado.status)}})</mat-label>
+              <mat-select [disabled]="true">
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>PRIORIDADE ({{retornaPrioridade(chamado.priority)}})</mat-label>
+              <mat-select [disabled]="true">
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <div class="tecnico">
+          <mat-form-field class="full-width" appearance="outline">
+              <mat-label>TÉCNICO ({{chamado.nameTechnical}})</mat-label>
+              <mat-select [disabled]="true">
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <div class="cliente">
+          <mat-form-field class="full-width" appearance="outline">
+              <mat-label>CLIENTE ({{chamado.nameClient}})</mat-label>
+              <mat-select [disabled]="true">
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <mat-form-field class="full-width descricao" appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <textarea class="descricao" [disabled]="true" [(ngModel)]="chamado.observations" name="observations" matInput></textarea>
+    </mat-form-field>
+  </form>
+  <button routerLink="../../" mat-stroked-button class="full-width mat-elevation-z4" color="warn">VOLTAR</button>
+  <p class="ful-width"> by Antony Dos Santos Felisberto</p>
+</div>

@@ -1,0 +1,43 @@
+<div class="container mat-elevation-z8">
+  <form class="form">
+      <h1 class="fullWidth">Atualizar Cliente</h1>
+      <img src="../../../assets/img/inclusao.svg" class="fullWidth" alt="Help desk">
+
+      <section class="section">
+          <mat-checkbox (click)="addPerfil(0)"  class="margin">Admin</mat-checkbox>
+          <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin">Cliente</mat-checkbox>
+          <mat-checkbox (click)="addPerfil(2)" class="margin">Tecnico</mat-checkbox>
+        </section>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>Nome</mat-label>
+          <input [(ngModel)]="client.name" name="name" [formControl]="nome" matInput placeholder="Ex... fulano da silva" maxlength="50" required>
+          <mat-icon matSuffix>badge</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>Cpf</mat-label>
+          <input [(ngModel)]="client.cpf" name="cpf" [formControl]="cpf" matInput placeholder="Ex... 000.000.000-00" mask="000.000.000-00" required>
+          <mat-icon matSuffix>pin</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="client.email" name="email" [formControl]="email" matInput placeholder="Ex... fulano@mail.com" required>
+          <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>Senha</mat-label>
+          <input [(ngModel)]="client.password" name="password" [formControl]="senha" matInput placeholder="Ex... 1234" type="password" required>
+          <mat-icon matSuffix>password</mat-icon>
+        </mat-form-field>
+
+        <button [disabled]="!validaCampos()" (click)="update()" class="fullWidth mat-elevation-z4" mat-raised-button color="accent">Atualizar</button>
+        <button routerLink="../../" class="fullWidth mat-elevation-z4" mat-raised-button color="warn">Cancelar</button>
+
+        
+ <p class="fullWidth"> by Antony Dos Santos Felisberto</p>
+  </form>
+
+</div>

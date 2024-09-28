@@ -1,0 +1,37 @@
+<div class="card">
+   <div class="container" style="color:white ">
+      <form class="form mat-elevation-z8" #dadosMateriais="ngForm" (submit)="adicionarMaterial(dadosMateriais)">
+         <img class="logo" src="..\\src\assets\logoOficina.png" alt="">
+         <h4>Cadastro de Materiais</h4>
+
+         <p>DESCRIMINIZAÇÃO:<br>
+         <textarea class="p-col-12" class="full-width" required ng-model ngModel autocomplete="disabled" autocomplete="off"
+            required ngModel name="descriminizacao" id="descriminizacao" minlength="1"  type="textarea" pInputTextarea></textarea>
+         </p>
+
+         <p>QUANTIDADE:<br>
+         <input class="p-col-12" class="full-width" autocomplete="disabled" autocomplete="off"
+            required  ngModel name="quantidade" id="quantidade"  type="number" autocomplete="off" min="1" pInputText />
+         </p>
+
+         <p>COD:<br>
+            <input class="p-col-12" class="full-width" autocomplete="disabled" autocomplete="off" required ngModel
+            name="codProduto" id="codProduto"  type="number" autocomplete="off" min="1" pInputText />
+         </p>
+
+         <p>PREÇO UNIDADE:<br>
+            <input class="p-col-12" class="full-width" autocomplete="disabled" autocomplete="off"
+            required  ngModel name="precoUnidade" id="precoUnidade" [step]="0.01" type="number" autocomplete="off" min="0.5" pInputText />
+         </p>
+
+         <p>UNIDADE:<br>
+               <input class="p-col-12" class="full-width" autocomplete="disabled" autocomplete="off" required ngModel
+               name="unidade" id="unidade"  type="number" min="1" autocomplete="off"  pInputText>
+         </p>
+
+         <p-toast></p-toast>
+         <input type="submit" [disabled]="dadosMateriais.invalid" class="btn btn-outline-dark full-width mat-elevation-z4"  value="CADASTRAR">
+         <input type="reset" id="myCheck" class="btn btn-outline-dark  mat-elevation-z4" value="Limpar Campos" hidden>
+      </form>
+   </div>
+</div>

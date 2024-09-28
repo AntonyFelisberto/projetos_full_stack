@@ -1,0 +1,91 @@
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 8%;
+}
+.form {
+  width: 30rem;
+  margin: auto;
+  background-color:rgb(80, 80, 80) ;
+  padding: 4rem 1rem;
+  border-radius: 1rem;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+}
+img {
+  width: 40%;
+  margin: 1.5rem auto 1.5rem auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.full-width {
+  width: 100%;
+}
+button {
+  margin-top: 1.5rem;
+}
+mat-icon {
+  opacity: .6;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+.CADASTRAR{
+  background-color: black;
+  color: white;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+.example-container > * {
+  width: 100%;
+}
+.logo{
+  width: 80%;
+  margin-top: 0%;
+}
+.card {
+  margin-top: 4em;
+}
+h4{
+  text-align: center;
+  align-items: center;
+}
+@media screen and (max-width: 1920px) {
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 8%;
+  }
+  .form {
+    width: 30rem;
+    margin: auto;
+    background-color:rgb(80, 80, 80) ;
+    padding: 4rem 1rem;
+    border-radius: 1rem;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    width: 40%;
+    margin: 1.5rem auto 1.5rem auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

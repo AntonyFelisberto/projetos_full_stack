@@ -1,0 +1,45 @@
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <!--imagem svg escolhida por se adaptar a sites-->
+        <img src="../../../assets/img/inicio.svg" alt="" srcset="">
+        <mat-nav-list class="nav-list">
+            <a mat-link-item routerLink="home">
+                <i class="material-icons">home</i>Home
+            </a>
+        </mat-nav-list>
+        <mat-nav-list class="nav-list">
+            <a mat-link-item routerLink="technical">
+                <i class="material-icons">account_circle</i>Técnicos
+            </a>
+        </mat-nav-list>
+        <mat-nav-list class="nav-list">
+            <a mat-link-item routerLink="client">
+                <i class="material-icons">person</i>Clientes
+            </a>
+        </mat-nav-list>
+        <mat-nav-list class="nav-list">
+          <a mat-link-item routerLink="chamados">
+              <i class="material-icons">support</i>Chamados
+          </a>
+      </mat-nav-list>
+        <mat-nav-list class="nav-list">
+            <a mat-link-item href="https://github.com/AntonyFelisberto" target="_blank">
+                <i class="material-icons">code</i>Github
+            </a>
+        </mat-nav-list>
+        <mat-nav-list class="nav-list">
+            <a mat-link-item (click)="logout()">
+                <i class="material-icons">logout</i>Logout
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
+  
+    <div class="sidenav-content">
+        <app-header></app-header>
+        <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </div>
+  
+</mat-drawer-container>

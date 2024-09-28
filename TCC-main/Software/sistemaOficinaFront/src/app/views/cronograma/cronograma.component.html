@@ -1,0 +1,73 @@
+<div class="card">
+<h4>Cronograma</h4>
+<br>
+<br>
+<br>
+<div class="calendario">
+    <p-calendar [inline]="true"
+                dateFormat="dd.mm.yy HH:MM:SS"
+                [(ngModel)]="dates"
+                (onSelect)="filtrar()"
+                ngModel #key="ngModel">
+    </p-calendar>
+</div>
+<br>
+<div class="container">
+  <h4>Cadastrar Cronograma </h4>
+  <form #dadosNovoCronograma="ngForm" (submit)="inserirDadosCronograma(dadosNovoCronograma)">
+      <table class="rTable" responsiveLayout="scroll">
+        <thead>
+          <tr class="p-grid p-fluid" >
+            <td class="flex-auto">Descrição</td>
+            <td class="flex-auto">Data Inicio</td>
+            <td class="flex-auto">Data Fim</td>
+            <td class="flex-auto"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-grid p-fluid">
+            <td class="flex-auto"><textarea id="username1" type="text" aria-describedby="username1-help" pInputText ngModel name="descricao" cols="50" pInputTextarea></textarea></td>
+            <td class="flex-auto"><p-calendar  placeholder="Data inicial" [minDate]="minDate" utc='true' dateFormat="dd.mm.yy" [showTime]="true" hourFormat="12" ngModel name="dataInicio" [showIcon]="true" inputId="icon"></p-calendar></td>
+            <td class="flex-auto"><p-calendar placeholder="Data Fim" utc='true' [minDate]="minDate" dateFormat="dd.mm.yy" [showTime]="true" hourFormat="12" inputId="time" ngModel name="dataFim" [showIcon]="true" inputId="icon"></p-calendar></td>
+            <td class="flex-auto"><p-button label="SALVAR" icon="pi pi-check" type="submit" styleClass="p-button" color="gray" [disabled]="dadosNovoCronograma.invalid"></p-button></td>
+            <input type="reset" id="myCheck" class="btn btn-outline-dark  mat-elevation-z4" value="Limpar Campos" hidden>
+          </tr >
+        </tbody>
+        <p-toast></p-toast>
+      </table>
+  </form>
+</div>
+<div class="container">
+  <br>
+  <div *ngIf="dadosCronogramaUsuario.length > 0"  class="">
+    <h4>Cronograma disponiveis</h4>
+    <form #dadosCronograma="ngForm" *ngFor="let dados of dadosCronogramaUsuario">
+      <table class="rTable" responsiveLayout="scroll">
+        <thead>
+          <tr class="p-grid p-fluid" >
+            <td class="flex-auto">Descrição</td>
+            <td class="flex-auto">Data Inicio</td>
+            <td class="flex-auto">Data Fim</td>
+            <td class="flex-auto"></td>
+            <td class="flex-auto"></td>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="p-grid p-fluid">
+          <input ngModel="{{dados.idCronograma}}" ngModel name="idCronograma" type="number" hidden >
+          <td class="flex-auto"><textarea id="username1" type="text" aria-describedby="username1-help" pInputText ngModel ngModel="{{dados.descricao}}" cols="50" name="descricao"pInputTextarea></textarea></td>
+          <td class="flex-auto"><p-calendar placeholder="{{dados.dataInicio | date:'dd/MM/yyyy HH:MM:SS'}}" [minDate]="minDate" utc='true' dateFormat="dd.mm.yy" [showTime]="true" hourFormat="12" ngModel name="dataInicio" [showIcon]="true" inputId="icon"></p-calendar></td>
+          <td class="flex-auto"><p-calendar placeholder="{{dados.dataFim | date:'dd/MM/yyyy HH:MM:SS'}}" utc='true' [minDate]="minDate" dateFormat="dd.mm.yy" [showTime]="true" hourFormat="12" inputId="time" ngModel name="dataFim" [showIcon]="true" inputId="icon"></p-calendar></td>
+          <td class="flex-auto"><p-button label="ATUALIZAR" icon="pi pi-check" styleClass="p-button" color="gray" (onClick)="atualizarDadosCronograma(dadosCronograma.value)" [disabled]="dadosCronograma.invalid"></p-button></td>
+          <td class="flex-auto"><p-button label="EXCLUIR" icon="pi pi-check" styleClass="p-button" color="gray" (onClick)="deletarDadosCronograma(dados.idCronograma)"></p-button></td>
+        </tr>
+      </tbody>
+      </table>
+    </form>
+  </div>
+<br>
+</div>
+<br>
+<div *ngIf="dadosCronogramaUsuario.length === 0"  class="">
+  <h4 class="alert-heading"> SEM CRONOGRAMA </h4>
+</div>

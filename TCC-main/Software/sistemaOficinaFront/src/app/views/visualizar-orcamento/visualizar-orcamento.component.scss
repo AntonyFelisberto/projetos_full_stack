@@ -1,0 +1,61 @@
+.grid{
+  background-color:gray ;
+  border: 2px solid rgb(0, 0, 0);
+  margin-top: 05%;
+  margin-right: 40%;
+  margin-left: 10%;
+}
+.logo{
+  width: 30%;
+}
+.pes{
+  background-color:gray ;
+  border: 2px solid rgb(0, 0, 0);
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+table {
+  width: 80em;
+  border-collapse: collapse;
+}
+tr.linha{
+  background-color: gray;
+}
+td{
+  border: 1px solid rgb(0, 0, 0);
+  padding: 8px;
+}
+.container{
+  width: 80%;
+  text-align: center;
+  align-items: center;
+}
+@media screen and (max-width:480px){
+  content{width: 10%; display: flex;}
+  .rTable thead td{ display: flex; flex-direction: column; width: 25%; margin-right: -10;}
+  .rTable tbody td{ display: flex; flex-direction: column; width: 25%;}
+}
+.content{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+h4{
+  background-color:gray ;
+  border: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  align-items: center;
+}
+.card{
+  width: 95%;
+  border: none;
+  margin: auto;
+  background: gray;
+}
+.rTable{
+  margin: auto;
+}

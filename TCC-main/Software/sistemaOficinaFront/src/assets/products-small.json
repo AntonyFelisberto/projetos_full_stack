@@ -1,0 +1,84 @@
+{
+	"data": [
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 89.0,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 15,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 49.01,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		},
+		{
+			"idMaterial": 1001,
+			"codProduto": 1111,
+			"descriminizacao": "Product Description",
+			"precoUnidade": 72,
+			"quantidade": 61,
+			"unidade": 4
+		}
+	]
+}

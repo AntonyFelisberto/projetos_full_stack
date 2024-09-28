@@ -1,0 +1,52 @@
+<div class="card">
+<div class="content">
+  <h4>RE-ENVIAR ORÇAMENTO</h4>
+  <div class="col-md-5">
+      <form>
+          <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="search" id="busca" name="dadosBusca" ngModel #key="ngModel" (ngModelChange)="pesquisar(key.value)" placeholder="Pesquisar" required pInputText />
+          </span>
+      </form>
+  </div>
+</div>
+<br>
+<div>
+  <div class="content">
+    <div *ngIf="orcamentos.length > 0" class="">
+        <form #dadosForm="ngForm" >
+            <table class="rTable" responsiveLayout="scroll">
+              <thead>
+                  <tr class="p-grid p-fluid" >
+                    <td class="flex-auto">NOME</td>
+                    <td class="flex-auto">EMAIL</td>
+                    <td class="flex-auto">ENDEREÇO</td>
+                    <td class="flex-auto">TELEFONE</td>
+                    <td class="flex-auto">CELULAR</td>
+                    <td class="flex-auto">VEICULO</td>
+                    <td class="flex-auto">NOTA</td>
+                    <td class="flex-auto"></td>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let dadosOrcamento of orcamentos">
+                  <tr class="p-grid p-fluid">
+                    <input ngModel="" ngModel name="idOrcamento" type="number" hidden >
+                    <td class="flex-auto">{{dadosOrcamento.nome}}</td>
+                    <td class="flex-auto">{{dadosOrcamento.email}}</td>
+                    <td class="flex-auto">{{dadosOrcamento.endereco}}</td>
+                    <td class="flex-auto">{{dadosOrcamento.telefone}}</td>
+                    <td class="flex-auto">{{dadosOrcamento.celular}}</td>
+                    <td class="flex-auto">{{dadosOrcamento.veiculo}}</td>
+                    <td class="flex-auto">{{dadosOrcamento.idNota}}</td>
+                    <td class="flex-auto"><p-button (click)="reenviarOrcamento(dadosOrcamento.idNota)">RE-ENVIAR</p-button></td>
+                  </tr >
+                </tbody>
+            </table>
+        </form>
+      </div>
+      <p-toast></p-toast>
+      <div *ngIf="orcamentos.length === 0" class="">
+          <br>
+          <h4 class="alert-heading"> SEM ORÇAMENTOS </h4>
+      </div>
+</div>

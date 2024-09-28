@@ -1,0 +1,25 @@
+ATENÇÃO O ARQUIVO GITIGNORE ESTA COM A LINHA:
+	#/node_modules
+	ESSA LINHA COMENTADA É ONDE FICAM AS DEPENDENCIAS DO PROJETO, ENTÃO CASO NÃO QUEIRA SUBIR ELAS DESCOMENTE A LINHA 
+
+
+CASO DE O ERRO 
+
+	Node packages may not be installed. Try installing with 'npm install'.
+	Error: Could not find the '@angular-devkit/build-angular:dev-server' builder's node package.
+
+EXECUTE O SCRIPT
+
+	npm install
+	npm start
+
+
+
+
+Error: This command is not available when running the Angular CLI outside a workspace.
+
+EXECUTE OS PASSOS
+
+	Clique com o botão direito em cima da pasta do projeto 
+	clique em Open in Integrated Terminal
+	rode o ng serve

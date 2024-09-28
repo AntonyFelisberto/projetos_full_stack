@@ -1,0 +1,54 @@
+<div class="card">
+<div class="content">
+  <h4>Visualizar Orçamento</h4>
+  <div class="col-md-5">
+      <form>
+          <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="search" id="dadosBusca" name="dadosBusca" ngModel #dadosBusca="ngModel" (ngModelChange)="filtrarDados(dadosBusca.value)" placeholder="Pesquisar" required pInputText />
+          </span>
+      </form>
+  </div>
+</div>
+<br>
+<div>
+  <div class="content">
+    <div *ngIf="orcamento.length > 0" class="">
+        <table class="rTable" responsiveLayout="scroll">
+          <thead>
+              <tr class="p-grid p-fluid" >
+                <td class="flex-auto">NOME</td>
+                <td class="flex-auto">EMAIL</td>
+                <td class="flex-auto">ENDEREÇO</td>
+                <td class="flex-auto">TELEFONE</td>
+                <td class="flex-auto">CELULAR</td>
+                <td class="flex-auto">VEICULO</td>
+                <td class="flex-auto">NOTA</td>
+                <td class="flex-auto"></td>
+                <td class="flex-auto"></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="p-grid p-fluid" *ngFor="let dadosOrcamento of orcamento">
+                <input ngModel="" ngModel name="idOrcamento" type="number" hidden >
+                <td class="flex-auto">{{dadosOrcamento.nome}}</td>
+                <td class="flex-auto">{{dadosOrcamento.email}}</td>
+                <td class="flex-auto">{{dadosOrcamento.endereco}}</td>
+                <td class="flex-auto">{{dadosOrcamento.telefone}}</td>
+                <td class="flex-auto">{{dadosOrcamento.celular}}</td>
+                <td class="flex-auto">{{dadosOrcamento.veiculo}}</td>
+                <td class="flex-auto">{{dadosOrcamento.idNota}}</td>
+                <td class="flex-auto"><p-button  (click)="exibirArquivoPdf(dadosOrcamento.idNota)">VISUALIZAR</p-button></td>
+                <td class="flex-auto"><p-button (click)="baixarPdf(dadosOrcamento.idNota)">BAIXAR</p-button></td>
+              </tr >
+            </tbody>
+        </table>
+      </div>
+      <p-toast></p-toast>
+    </div>
+    <div *ngIf="orcamento.length === 0" class="">
+      <br>
+      <h4 class="alert-heading"> SEM ORÇAMENTOS </h4>
+    </div>
+</div>
+</div>

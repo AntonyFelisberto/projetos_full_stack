@@ -1,0 +1,60 @@
+<nav id="menu-h">
+  <ul>
+    <li><img id="menu-h"  src="..\\src\assets\logoOficina.png" alt="Imagem de navegação"></li>
+    <li>
+      <a mat-list-item routerLink="inicio" >
+        INICIO
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="cronograma" >
+        CRONOGRAMA
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="cadastrarUsuario" >
+        CADASTRAR USUARIO
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="enviarOrcamento" >
+        ENVIAR ORÇAMENTO
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="reenviarOrcamento" >
+        REENVIAR ORÇAMENTO
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="visualizarOrcamento" >
+        VISUALIZAR ORÇAMENTO
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="visualizarMateriais" >
+        VISUALIZAR MATERIAIS
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="cadastrarMateriais" >
+        CADASTRAR MATERIAIS
+      </a>
+    </li>
+
+    <li>
+      <a mat-list-item routerLink="/" (click)="limparToken()">
+        LOGOUT
+      </a>
+    </li>
+  </ul>
+</nav>
+<br>
+<router-outlet></router-outlet>

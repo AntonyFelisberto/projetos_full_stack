@@ -1,0 +1,49 @@
+<div class="card">
+<div class="content">
+  <H4>Visualizar Materiais</H4>
+    <div class="col-md-5">
+        <form>
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input type="search" id="busca" name="dadosBusca" ngModel #key="ngModel" (ngModelChange)="filtrar(key.value)" placeholder="Pesquisar" required pInputText />
+            </span>
+        </form>
+    </div>
+  </div>
+  <br>
+  <div>
+    <div class="content">
+      <form #dadosForm="ngForm" *ngFor="let material of materiais">
+          <table class="rTable" responsiveLayout="scroll">
+            <thead>
+                <tr class="p-grid p-fluid" >
+                  <td class="flex-auto">Unidade</td>
+                  <td class="flex-auto">Codigo Produto</td>
+                  <td class="flex-auto">Quantidade</td>
+                  <td class="flex-auto">Descriminizacao</td>
+                  <td class="flex-auto">Preço Unidade</td>
+                  <td class="flex-auto"></td>
+                  <td class="flex-auto"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="p-grid p-fluid">
+                  <input ngModel="{{material.idMaterial}}" ngModel name="idMaterial" type="number" hidden >
+                  <td class="flex-auto"><p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"  name="unidade" ngModel="{{material.unidade}}" NgModel></p-inputNumber></td>
+                  <td class="flex-auto"><p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"  name="codProduto" ngModel="{{material.codProduto}}" NgModel ></p-inputNumber></td>
+                  <td class="flex-auto"><p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"  name="quantidade" ngModel="{{material.quantidade}}" NgModel ></p-inputNumber></td>
+                  <td class="flex-auto"><textarea type="text"pInputText  name="descriminizacao" ngModel="{{material.descriminizacao}}" cols="50" NgModel value="{{material.descriminizacao}}"pInputTextarea></textarea></td>
+                  <td class="flex-auto"><p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"  [step]="0.01" name="precoUnidade" ngModel="{{material.precoUnidade}}" NgModel ></p-inputNumber></td>
+                  <td class="flex-auto"><p-button (click)="atualizarMateriais(dadosForm.value)">Atualizar</p-button></td>
+                  <td class="flex-auto"><p-button (click)="deletarMateriaisPorId(material.idMaterial)" >Deletar</p-button></td>
+                  <p-toast></p-toast>
+                </tr >
+              </tbody>
+          </table>
+      </form>
+
+    <div *ngIf="materiais.length === 0"  class="">
+        <h4 class="alert-heading"> SEM MATERIAIS </h4>
+    </div>
+  </div>
+</div>

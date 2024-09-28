@@ -1,0 +1,69 @@
+<form #dadosMateriais="ngForm" (submit)="adicionarMaterial(dadosMateriais)">
+
+<br><input type="number" ngModel ng-model="UND" name="unidade" id="unidade" placeholder="UND" required>
+               
+<input type="submit" [disabled]="dadosMateriais.invalid" class="btn btn-outline-dark" value="CADASTRAR">
+
+EXPLICAÇÕES
+
+	NECESSARIOS PARA O FRONT CONECTAR COM O BACK
+
+		BUSCA
+		
+			type="search"
+
+			ngModel 
+
+			#dados="ngModel"
+
+			name="dados"
+
+			(ngModelChange)="metodo(parametro.value)"
+
+			ngModel="{{material.valor}}"	
+
+			id="busca"	
+
+			required
+
+		CADASTRO		
+
+			#dadosMateriais="ngForm"
+
+				CRIANDO UMA VARIAVEL QUE ARMAZENA OS DADOS DE TODOS OS INPUTS
+				CADA #variavel="" PODE TER TIPOS DIFERENTES EXEMPLO ngForm É PARA FORMULARIO ngModel É PARA DADOS
+
+			(submit)="adicionarMaterial(dadosMateriais)" OU (NgSubmit)="adicionarMaterial(dadosMateriais)"
+		
+				DIZ QUE QUANDO O USUARIO APERTAR O SUBMIT CHAMARA O METODO adicionarMaterial PASSANDO OS DADOS DA VARIAVEL #dadosMateriais
+
+			ngModel		
+
+				É MUITO IMPORTANTE COLOCA LO POIS É ELE QUEM ENVIA OS DADOS DO INPUT PARA O #dadosMateriais
+
+			name="unidade"
+
+				NOME DA VARIAVEL, AQUI SE COLOCA O NOME DA VARIAVEL IGUAL A DO BACK (LEMBRANDO QUE AS MODELS EM .TS TAMBEM DEVE SEGUIR O NOME IGUAL DO BACK)
+
+			[disabled]="dadosMateriais.invalid"   
+			
+				VALIDA SE OS DADOS ARMAZENADOS EM #dadosMateriais E VERIFICA SE NÃO ESTÃO INVALIDOS ANTES DE MANDAR PRO BACK
+
+			type="number"
+
+				DIZ O TIPO QUE SERA A VARIAVEL
+
+			id="unidade"
+
+				SERVE PARA SER POSSIVEL IDENTIFICAR O ATRIBUTO TANTO EM CSS QUANTO EM CONSULTAS
+
+	EXIBIÇÃO
+
+		placeholder="UND"
+
+		required
+
+		ng-model="UND"
+
+			
+            
