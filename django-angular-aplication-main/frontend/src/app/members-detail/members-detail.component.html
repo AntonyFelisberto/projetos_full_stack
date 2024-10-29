@@ -1,0 +1,14 @@
+<p>Member details</p>
+<p>Membro carregado {{selectedMember.name}} {{selectedMember.surname}}</p>
+
+<span class="image left">
+    <img src="{{selectedMember.photo}}" alt="{{selectedMember.name}}">
+</span>
+
+<input type="text" [(ngModel)]="selectedMember.id" readonly>
+<input type="text" [(ngModel)]="selectedMember.name">
+<input type="text" [(ngModel)]="selectedMember.surname">
+<input type="text" [(ngModel)]="selectedMember.phone">
+<button (click)="update()" class="button">UPDATE DATA</button>
+<button (click)="delete()" class="button">DELETE DATA</button>
+<button (click)="newMember()" class="button primary">NEW DATA</button>

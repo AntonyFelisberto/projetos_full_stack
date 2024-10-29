@@ -1,0 +1,31 @@
+TENHA CERTEZA DE ESTAR DENTRO DA VENV NA HORA DE INSTALAR E RODAR COMANDOS
+    CRIAR VENV
+        python -m venv venv
+    ATIVAR Scripts
+        cd venv\Scripts
+        activate
+    INSTALL 
+        pip install django
+        pip install djangorestframework
+        pip install wheel
+        pip install uwsgi
+    CRIAR DJANGO
+        django-admin startproject front ..\..\  
+    RODAR DJANGO
+        python manage.py runserver
+    INSTALAR CORE
+        python manage.py migrate
+        python manage.py startapp core 
+            core é o nome do seu app
+    DEPOIS DE ALTERAR MODELS DO CORE E SETTINGS DO front, TODA VEZ QUE ALTERAR MODELS E COISAS DO CORE RODE ESSE COMANDO PARA COMPILAR AS CONFIGURAÇÕES DO BANCO DE DADOS E APLICAÇÃO
+        python manage.py makemigrations
+        python manage.py migrate
+    CRIAR SUPER USER
+        python manage.py createsuperuser
+    COLETAR STATIC DO SETTINGS
+        python manage.py collectstatic
+    LISTAR TUDO QUE TEM INSTALADO DENTRO DA VM
+        pip freeze > requirements.txt
+
+ANGULAR
+    
